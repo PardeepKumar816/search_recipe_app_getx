@@ -19,6 +19,7 @@ dependencies:
   get: ^4.6.6
   http: ^1.2.1
   hive_flutter: ^1.1.0
+  connectivity_plus: ^6.0.3
   # connectivity_plus: ^6.0.3
 
 dev_dependencies:

@@ -1,5 +1,5 @@
-import 'dart:io';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 
 // To remove all html tags in string
@@ -16,14 +16,10 @@ Size getDeviceSize(context) {
 }
 
 Future<bool> checkInternetConnection() async {
-  try {
-    final result = await InternetAddress.lookup('google.com');
-    if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-      return true;
-    } else {
-      return false;
-    }
-  } on SocketException catch (_) {
-    return false;
+   var connectivityResult = await Connectivity().checkConnectivity();
+  if (connectivityResult.contains(ConnectivityResult.none)) {
+    return false; // No internet connection
+  } else {
+    return true; // Internet connection is available
   }
 }
