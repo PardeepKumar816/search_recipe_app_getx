@@ -13,7 +13,7 @@ class RecipeModel {
   int? number;
   int? totalResults;
 
-  RecipeModel.fromJson(Map<String, dynamic> json) {
+  RecipeModel.fromJson(Map<dynamic, dynamic> json) {
     results = List.from(json['results'] ?? [])
         .map((e) => Results.fromJson(e))
         .toList();
@@ -22,8 +22,8 @@ class RecipeModel {
     totalResults = json['totalResults'] ?? 0;
   }
 
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
+  Map<dynamic, dynamic> toJson() {
+    final data = <dynamic, dynamic>{};
     data['results'] = results!.map((e) => e.toJson()).toList();
     data['offset'] = offset;
     data['number'] = number;
@@ -44,14 +44,14 @@ class Results {
   String? image;
   String? imageType;
 
-  Results.fromJson(Map<String, dynamic> json) {
+  Results.fromJson(Map<dynamic, dynamic> json) {
     id = json['id'] ?? 0;
     title = json['title'] ?? "";
     image = json['image'] ?? "";
     imageType = json['imageType'] ?? "";
   }
 
-  Map<String, dynamic> toJson() {
+  Map<dynamic, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['id'] = id;
     data['title'] = title;

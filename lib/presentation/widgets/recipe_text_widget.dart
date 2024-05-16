@@ -16,10 +16,7 @@ class RecipeTextWidget extends StatelessWidget {
       child: Text(
         title, // recipe name
         style: const TextStyle(
-            color: whiteColor,
-            fontSize: 18,
-            fontWeight: FontWeight.w700
-        ),
+            color: whiteColor, fontSize: 18, fontWeight: FontWeight.w700),
         textAlign: TextAlign.center,
       ),
     );
